@@ -3,7 +3,8 @@ import Config from "../../Config";
 
 function Pagination({ total, currentPage, handlePagination }) {
     const {dataLimit, pageLimit} = Config;
-    const pages = Math.round(total / dataLimit);
+    const pages = Math.ceil(total / dataLimit);
+    console.log(pages)
 
     function goToNextPage() {
         handlePagination(currentPage + 1);
